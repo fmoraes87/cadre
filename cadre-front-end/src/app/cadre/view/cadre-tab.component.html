@@ -1,0 +1,23 @@
+<app-tab-toolbar></app-tab-toolbar>
+<div class="p-grid">
+  <div class="p-col-12">
+    <div class="card">
+      <div class="p-fluid p-formgrid p-grid">
+        <ng-template
+          ngFor
+          let-fieldGroup
+          [ngForOf]="currentTabModel.fieldsGroup"
+          let-i="index"
+        >
+          <app-field
+            *ngFor="let field of fieldGroup"
+            [formGroup]="tabFormGroup"
+            [field]="field"
+            [class]="field.boostrapClass"
+          >
+          </app-field>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

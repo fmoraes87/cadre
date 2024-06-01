@@ -1,0 +1,63 @@
+<div class="layout-topbar">
+    <div class="topbar-left">
+        <a tabindex="0" class="menu-button" (click)="appMain.onMenuButtonClick($event)">
+            <i class="pi pi-chevron-left"></i>
+        </a>
+        <span class="topbar-separator"></span>
+        <ng-template ngFor let-item let-last="last" [ngForOf]="items">
+            <span class="viewname" style="text-transform: uppercase">{{item.label}}</span>
+        </ng-template>
+        <img id="logo-mobile" class="mobile-logo" [src]="'assets/layout/images/logo-'+ (app.colorScheme === 'light' ? 'dark' : 'white') + '.svg'" alt="diamond-layout" />
+    </div>
+
+    <div class="topbar-right">
+        <ul class="topbar-menu">
+     
+            <li class="profile-item" [ngClass]="{'active-menuitem fadeInDown': appMain.topbarUserMenuActive}">
+                <a href="#" (click)="appMain.onTopbarUserMenuButtonClick($event)">
+                    <a href="#" (click)="onLogout()">
+                        <i class="pi pi-power-off"></i>
+                    </a>
+                </a>
+                <ul class="profile-menu fade-in-up">
+                    <!--<li>
+                        <a href="#">
+                            <i class="pi pi-user"></i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="pi pi-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="pi pi-calendar"></i>
+                            <span>Calendar</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="pi pi-inbox"></i>
+                            <span>Inbox</span>
+                        </a>
+                    </li>-->
+                    <li>
+                        <a href="#" (click)="onLogout()">
+                            <i class="pi pi-power-off"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <!--<li class="right-sidebar-item">
+                <a href="#" tabindex="0" (click)="appMain.onRightMenuClick($event)">
+                    <i class="pi pi-align-right"></i>
+                </a>
+            </li>-->
+        </ul>
+    </div>
+</div>

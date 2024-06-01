@@ -1,0 +1,96 @@
+@media screen and (min-width: $tabletBreakpoint + 1) {
+    .layout-wrapper {
+        &.layout-slim {
+            .topbar-left {
+                .menu-button {
+                    display: none;
+                }
+
+                .topbar-separator {
+                    display: none;
+                }
+            }
+
+            .layout-sidebar {
+                width: $slimSidebarWidth;
+                overflow: visible;
+                z-index: 999;
+
+                .logo-image {
+                    margin-right: 0;
+                }
+
+                .app-name {
+                    display: none;
+                }
+
+                .layout-menu-container {
+                    overflow: visible;
+                }
+            }
+
+            .layout-content-wrapper {
+                margin-left: $slimSidebarWidth;
+            }
+
+            .layout-menu {
+                ul {
+                    display: none;
+                }
+
+                li.active-menuitem {
+                    > ul {
+                        display: block;
+                    }
+                }
+
+                .layout-root-menuitem {
+                    position: relative;
+                    border-radius: $borderRadius;
+
+                    > .layout-menuitem-root-text {
+                        display: none;
+                    }
+
+                    > a {
+                        display: block;
+                        text-align: center;
+                        border-radius: $borderRadius;
+                        padding: .5rem 0;
+                        cursor: pointer;
+                        outline: none;
+                        transition: background-color $transitionDuration;
+
+                        .layout-submenu-toggler {
+                            display: none;
+                        }
+
+                        .layout-menuitem-icon {
+                            font-size: 1.25rem;
+                        }
+
+                        .layout-menuitem-text {
+                            font-size: 0.875rem;
+                            display: block;
+                            margin-top: .25rem;
+                        }
+                    }
+
+                    > ul {
+                        position: absolute;
+                        left: 5rem;
+                        top: 0;
+                        min-width: 15rem;
+                        border: $overlayBorder;
+                        box-shadow: $overlayShadow;
+                        border-top-right-radius: $borderRadius;
+                        border-bottom-right-radius: $borderRadius;
+                        padding: 1rem;
+                        animation-duration: $animationDuration;
+                        animation-timing-function: $animationTimingFunction;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+.layout-sidebar {
+    background: $sidebarBgColor;
+    border-right: $sidebarBorder;
+    background-image: linear-gradient(180deg,$sidebarBgColor 10%,$sidebarBgColorAlt 100%);
+
+    .logo {
+        border-bottom: $menuSeparatorBorder;
+
+        &:focus {
+            box-shadow: $menuitemFocusShadow;
+        }
+    }
+
+    .app-name {
+        color: $appNameColor;
+    }
+
+    .layout-menu {
+        .menu-separator {
+            border-top: $menuSeparatorBorder;
+        }
+
+        li {
+            &.active-menuitem {
+                > a {
+                    color: $menuitemTextActiveColor;
+                }
+            }
+
+            a {
+                color: $menuitemTextColor;
+
+                &:hover {
+                    background: $menuitemHoverBg;
+                }
+
+                &:focus {
+                    box-shadow: $menuitemFocusShadow;
+                }
+            }
+        }
+
+        .layout-root-menuitem {
+            .layout-menuitem-root-text {
+                color: $menuitemRootTextColor;
+            }
+
+            &.active-menuitem {
+                background: $menuitemActiveBg;
+            }
+
+            > ul {
+                > li.active-menuitem {
+                    background: $menuitemActiveBg;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $tabletBreakpoint + 1) {
+    &.layout-slim {
+        .layout-sidebar {
+            .layout-menu {
+                .layout-root-menuitem {
+                    > ul {
+                        background: $sidebarBgColor;
+                        background-image: linear-gradient(180deg,$sidebarBgColor 10%,$sidebarBgColorAlt 100%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $tabletBreakpoint + 1) {
+    .layout-sidebar {
+        .layout-menu {
+            
+            .layout-root-menuitem {
+                &.active-menuitem {
+                    background: transparent;
+                }
+            }
+        }
+    }
+}

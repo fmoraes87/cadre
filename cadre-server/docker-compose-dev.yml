@@ -1,0 +1,32 @@
+version: '3.9'
+
+networks:
+  cadre-network:
+    external: true
+
+services:
+  postgres-12:
+    image: postgres:12
+    container_name: 'cadre-postgres-12'
+    #    command: postgres -c shared_buffers=1GB -c work_mem=256MB -c checkpoint_timeout=60min -c max_wal_size=10GB -c max_locks_per_transaction=256
+    environment:
+      POSTGRES_DB: 'cadre'
+      POSTGRES_USER: 'cadre'
+      POSTGRES_PASSWORD: 'c4dr3'
+      POSTGRES_HOST_AUTH_METHOD: trust
+      TZ: 'UTC'
+      PGTZ: 'UTC'
+    volumes:
+      - ./data/postgres12/data:/var/lib/postgresql/data
+      - ./database_init:/docker-entrypoint-initdb.d
+#      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 5432:5432
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '10m'
+        max-file: '10'
+    #    restart: unless-stopped
+    networks:
+      - cadre-network

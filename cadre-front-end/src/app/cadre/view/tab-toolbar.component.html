@@ -1,0 +1,118 @@
+
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+
+<p-dialog header="Import file" [(visible)]="displayImportDialog" >
+    <app-tab-import-file [source]="table.tableName" *ngIf="table"></app-tab-import-file>
+</p-dialog>
+<ng-container #vc></ng-container>
+
+<div class="p-grid">
+  <div class="p-col-12">
+    <div class="card toolbar-demo">
+      <p-toolbar>
+        <div class="p-toolbar-group-left">
+          <ng-template [ngIf]="!serchMode">
+            <button
+              pButton
+              type="button"
+              [title]="searchEnabled ? ' Clear Filter' : 'Undo'"
+              (click)="onClickButton('undo')"
+              [disabled]="!enableButton('undo')"
+              icon="pi pi-undo"
+            ></button>
+            <button
+              pButton
+              type="button"
+              title="New Record"
+              (click)="onClickButton('new')"
+              [disabled]="!enableButton('new')"
+              icon="pi pi-file"
+            ></button>
+            <button
+              pButton
+              type="button"
+              title="Save"
+              (click)="onClickButton('save')"
+              [disabled]="!enableButton('save')"
+              icon="pi pi-save"
+            ></button>
+            <button
+              pButton
+              type="button"
+              title="Duplicate"
+              (click)="onClickButton('duplicate')"
+              [disabled]="!enableButton('duplicate')"
+              icon="pi pi-copy"
+            ></button>
+            <button
+              pButton
+              type="button"
+              title="Delete"
+              (click)="onClickButton('delete')"
+              [disabled]="!enableButton('delete')"
+              icon="pi pi-trash"
+            ></button>
+            <button
+              pButton
+              type="button"
+              title="Search"
+              (click)="onClickButton('enableSearch')"
+              [disabled]="!enableButton('enableSearch')"
+              icon="pi pi-search"
+            ></button>
+            <button
+              pButton
+              type="button"
+              title="Previous"
+              (click)="onClickButton('previous')"
+              [disabled]="!enableButton('previous')"
+              icon="pi pi-chevron-left"
+            ></button>
+            <button
+              pButton
+              type="button"
+              title="Next"
+              (click)="onClickButton('next')"
+              [disabled]="!enableButton('next')"
+              icon="pi pi-chevron-right"
+            ></button>
+            <button
+              pButton
+              type="button"
+              title="Import"
+              (click)="onClickButton('import')"
+              icon="pi pi-upload"
+              (click)="openImportFileDialog()"
+            ></button>
+            <button
+              *ngFor="let cb of customToolBarButtons"
+              pButton
+              type="button"
+              [title]="cb.name"
+              (click)="executeCustomAction(cb)"
+              [disabled]="!enableButton('customButton')"
+              [icon]="cb.icon"
+            ></button>
+
+          </ng-template>
+          <ng-template [ngIf]="serchMode">
+            <button
+              pButton
+              type="button"
+              title="Clear Filter"
+              (click)="onClickButton('disableSearch')"
+              icon="pi pi-times"
+            ></button>
+            <button
+              pButton
+              type="button"
+              title="Filter"
+              (click)="onClickButton('executeSearch')"
+              icon="pi pi-filter"
+            ></button>
+          </ng-template>
+        </div>
+      </p-toolbar>
+    </div>
+  </div>
+</div>

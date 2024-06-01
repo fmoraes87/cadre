@@ -1,0 +1,57 @@
+
+cadre-server/target/
+
+cadre-server/\.settings/
+
+cadre-server/\.classpath
+
+cadre-server/\.project
+
+cadre-server/\.idea
+
+/cadre-server/data
+
+cadre-server/repo/
+
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+cadre-front-end/dist
+cadre-front-end/tmp
+cadre-front-end/out-tsc
+
+# dependencies
+cadre-front-end/node_modules
+
+# IDEs and editors
+cadre-front-end/\.idea
+cadre-front-end/\.project
+cadre-front-end/\.classpath
+cadre-front-end/\.c9/
+cadre-front-end/\*.launch
+cadre-front-end/\.settings/
+cadre-front-end/\*.sublime-workspace
+
+# IDE - VSCode
+cadre-front-end/\.vscode/*
+cadre-front-end/\!.vscode/settings.json
+cadre-front-end/\!.vscode/tasks.json
+cadre-front-end/\!.vscode/launch.json
+cadre-front-end/\!.vscode/extensions.json
+
+# misc
+cadre-front-end/\.sass-cache
+cadre-front-end/connect.lock
+cadre-front-end/coverage
+cadre-front-end/libpeerconnection.log
+cadre-front-end/npm-debug.log
+cadre-front-end/testem.log
+cadre-front-end/typings
+
+# e2e
+cadre-front-end/e2e/*.js
+cadre-front-end/e2e/*.map
+
+# System Files
+cadre-front-end/\.DS_Store
+cadre-front-end/Thumbs.db

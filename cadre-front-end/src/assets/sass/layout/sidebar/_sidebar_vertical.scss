@@ -1,0 +1,160 @@
+.layout-sidebar {
+    width: $sidebarWidth;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    box-shadow: $overlayShadow;
+    @include flex();
+    @include flex-direction-column();
+    user-select: none;
+    transition: transform $animationDuration $animationTimingFunction;
+
+    .logo {
+        text-align: center;
+        display: block;
+        outline: 0 none;
+        padding: 1rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        transition: background-color $transitionDuration, box-shadow $transitionDuration;
+    }
+
+    .logo-image {
+        width: 2rem;
+        height: 2rem;
+        vertical-align: middle;
+        margin-right: .5rem;
+    }
+
+    .app-name {
+        vertical-align: middle;
+        font-size: 1.5rem;
+        letter-spacing: .2px;
+    }
+}
+
+.layout-menu-container {
+    overflow: auto;
+    flex: 1;
+    padding: 1rem;
+}
+
+.layout-menu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    .menu-separator {
+        margin: 1rem 0;
+    }
+
+    .layout-root-menuitem {
+        > .layout-menuitem-root-text {
+            font-size: .857rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: .5rem 0 1rem 0;
+        }
+
+        > a {
+            display: none;
+        }
+
+        .layout-menu-tooltip {
+            display: none;
+        }
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        a {
+            @include flex();
+            @include flex-align-center();
+            position: relative;
+            padding: .5rem;
+            font-size: 1rem;
+            border-radius: $borderRadius;
+            outline: 0 none;
+            cursor: pointer;
+            transition: background-color $transitionDuration, box-shadow $transitionDuration;
+
+            .layout-menuitem-icon {
+                margin-right: .5rem;
+            }
+
+            .layout-submenu-toggler {
+                font-size: 75%;
+                margin-left: auto;
+                transition: transform $transitionDuration;
+            }
+
+            &.rotated-icon {
+                .layout-menuitem-icon {
+                    transform: rotate(90deg);
+                }
+            }
+
+            &.active-route {
+                font-weight: 700;
+            }
+        }
+
+        li {
+            &.active-menuitem {
+                border-radius: $borderRadius;
+
+                > a {
+                    .layout-submenu-toggler {
+                        transform: rotate(-180deg);
+                    }
+                }
+            }
+        }
+
+        ul {
+            overflow: hidden;
+            border-radius: $borderRadius;
+
+            li {
+                a {
+                    padding-left: 1.5rem;
+                }
+
+                li {
+                    a {
+                        padding-left: 2.5rem;
+                    }
+
+                    li {
+                        a {
+                            padding-left: 3.5rem;
+                        }
+
+                        li {
+                            a {
+                                padding-left: 4.5rem;
+                            }
+
+                            li {
+                                a {
+                                    padding-left: 5.5rem;
+                                }
+
+                                li {
+                                    a {
+                                        padding-left: 6.5rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

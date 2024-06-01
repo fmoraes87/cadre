@@ -1,0 +1,14 @@
+<p-toast></p-toast>
+
+<p-tabView (onChange)="onSelectTab($event)">
+    <p-tabPanel [header]="tab.name" *ngFor="let tab of tabs; let i = index" cache=true>
+
+    
+                <app-cadre-tab
+                    [currentTabModel]="tab"
+                    [selected]="i===selectedIndex"
+                    [currentLevel]="i"
+                ></app-cadre-tab>
+    </p-tabPanel>
+
+</p-tabView>

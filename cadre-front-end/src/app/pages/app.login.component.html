@@ -1,0 +1,38 @@
+<div class="login-body">
+    <div class="login-wrapper">
+        <div class="login-panel">
+            <img  [src]="'assets/layout/images/logo-'+ (app.colorScheme === 'light' ? 'dark' : 'white') + '.svg'" class="logo" alt="diamond-layout" />
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="!isLoading">
+                <div class="login-form">
+                    <h2>Login to Your Account</h2>
+                    <p></p>
+                    <input pInputText id="email" placeholder="Email" formControlName="email"  />
+                    <input pPassword id="password" placeholder="Password" formControlName="password" type="password" />
+                    <button pButton label="Login" [disabled]="!form.valid" ></button>
+                </div>
+            </form>
+
+            <p>A problem? <a href="#">Click here</a> and let us help you.</p>
+        </div>
+        <div class="login-image">
+            <div class="login-image-content">
+                <h1>CADRE</h1>
+
+                <h3>
+                    <br/>
+                    <br/>The world needs great solutions.
+                    <br/>
+                    <br/> Build yours faster.
+                    <br/>
+                    <br/> Now everyone can quickly build and share low-code apps with us. </h3>
+            </div>
+            <div class="image-footer">
+                <p>ALT23E9</p>
+                <div class="icons">
+                    <i class="pi pi-github"></i>
+                    <i class="pi pi-twitter"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
