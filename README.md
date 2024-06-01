@@ -71,6 +71,8 @@ Password: System
 
 <img width="1434" alt="Captura de Tela 2024-06-01 às 10 18 08" src="https://github.com/fmoraes87/cadre/assets/11674222/f256a507-6037-4ed3-9d1e-3083ab45495e">
 
+<img width="1434" alt="Captura de Tela 2024-06-01 às 10 23 49" src="https://github.com/fmoraes87/cadre/assets/11674222/84dd1d92-d77e-4720-9b0c-108e09089775">
+
 
 By default, the application will be served at `http://localhost:4200/`.
 
