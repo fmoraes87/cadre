@@ -62,6 +62,18 @@ To run the application, use the Angular CLI command:
 ng serve
 ```
 
+```env
+User: admin@cadre.com
+Password: System
+```
+
+<img width="1434" alt="Captura de Tela 2024-06-01 às 10 18 20" src="https://github.com/fmoraes87/cadre/assets/11674222/8edc248d-c0c1-4a5d-b4a7-a4c1a372bee9">
+
+<img width="1434" alt="Captura de Tela 2024-06-01 às 10 18 08" src="https://github.com/fmoraes87/cadre/assets/11674222/f256a507-6037-4ed3-9d1e-3083ab45495e">
+
+<img width="1434" alt="Captura de Tela 2024-06-01 às 10 23 49" src="https://github.com/fmoraes87/cadre/assets/11674222/84dd1d92-d77e-4720-9b0c-108e09089775">
+
+
 By default, the application will be served at `http://localhost:4200/`.
 
 ### Building the Application
@@ -99,6 +111,12 @@ docker-compose -f docker-compose-dev.yml up -d
 3. Deploy the WAR file to Tomcat:
    - Copy the WAR file to the Tomcat `webapps` directory.
    - Start Tomcat (if not already running).
+  
+4. Set the database connection environment variable
+  
+```env
+  DATABASE_URL = postgres://cadre:c4dr3@localhost:5432/cadre
+```
 
 ### Accessing the Application
 Once deployed, the backend application will be accessible at `http://localhost:8080/<your-app-context>`.
