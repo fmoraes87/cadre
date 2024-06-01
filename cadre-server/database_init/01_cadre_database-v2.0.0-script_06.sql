@@ -2746,7 +2746,7 @@ COPY cadre.ad_field (ad_client_id, ad_field_id, ad_field_uu, ad_org_id, ad_tab_i
 0	194	\N	0	20	285	2020-03-27 18:16:09.448212	0	\N			Y	Y	Y	N	N	N	Model Provider Class		50	2020-03-27 18:16:09.448212	0	col-md-12 mb-3	0	\N
 0	149	\N	0	14	406	2020-03-27 10:29:48.369191	0	\N			Y	Y	Y	Y	Y	N	Reference		30	2020-03-27 10:29:48.369191	0	col-md-6 mb-3	0	\N
 0	134	\N	0	5	208	2020-03-25 21:38:32.989363	0	\N			Y	Y	Y	N	N	Y	Parent Column		55	2020-03-25 21:38:32.989363	0	col-md-6 mb-3	0	AD_Table_ID eq <@AD_Table_ID@>
-0	127	\N	0	6	393	2020-03-24 20:28:54.776716	0	\N			Y	Y	Y	N	N	Y	Dynamic Validation		55	2020-03-24 20:28:54.776716	0	col-md-6 mb-3	0
+0	127	\N	0	6	393	2020-03-24 20:28:54.776716	0	\N			Y	Y	Y	N	N	Y	Dynamic Validation		55	2020-03-24 20:28:54.776716	0	col-md-6 mb-3	0	\N
 0	195	\N	0	20	284	2020-03-27 18:16:25.094969	0	\N			Y	Y	Y	N	N	N	Service Provider Class		60	2020-03-27 18:16:25.094969	0	col-md-12 mb-3	0	\N
 0	205	\N	0	16	142	2020-03-27 18:30:50.802915	0	Y			Y	Y	Y	N	N	N	Active		60	2020-03-27 18:30:50.802915	0	col-md-6 mb-3	0	\N
 0	208	\N	0	20	277	2020-03-27 18:33:39.293603	0	Y			Y	Y	Y	N	N	N	Active		70	2020-03-27 18:33:39.293603	0	col-md-6 mb-3	0	\N
@@ -3446,7 +3446,7 @@ COPY cadre.ad_role (ad_role_id, ad_client_id, ad_org_id, isactive, created, crea
 --
 
 COPY cadre.ad_scripting (ad_client_id, ad_org_id, ad_scripting_id, createdby, description, isactive, name, enginetype, content, updatedby, value, ad_scripting_uu, created, updated) FROM stdin;
-0	0	7	0	\N	Y	teste	S	\t\t\t\t\t\timport com.cadre.server.core.broker.NotificationBroker;\n\t\t\t\t\t\timport javax.enterprise.inject.spi.CDI;\n \n\n\t\t\t\t\t\tNotificationBroker notificationService = CDI.current().select(NotificationBroker.class).get();\n\t\t\t\t\t\tnotificationService.sendNotificationlWithTemplate(NotificationBroker.NOTIFICATION_TYPE_EMAIL,\n\t\t\t\t\t\t\t\t"m87.fernando@gmail.com", // to\n\t\t\t\t\t\t\t\t"lancamento", null// values\n\t\t\t\t\t\t);	0	teste	\N	2021-04-28 12:24:47.39953	2021-04-28 15:30:58.393
+0	0	7	0	\N	Y	teste	S	\t\t\t\t\t\timport com.cadre.server.core.broker.NotificationBroker;\n\t\t\t\t\t\timport javax.enterprise.inject.spi.CDI;\n \n\n\t\t\t\t\t\tNotificationBroker notificationService = CDI.current().select(NotificationBroker.class).get();\n\t\t\t\t\t\tnotificationService.sendNotificationlWithTemplate(NotificationBroker.NOTIFICATION_TYPE_EMAIL,\n\t\t\t\t\t\t\t\t"seu@email.com", // to\n\t\t\t\t\t\t\t\t"lancamento", null// values\n\t\t\t\t\t\t);	0	teste	\N	2021-04-28 12:24:47.39953	2021-04-28 15:30:58.393
 \.
 
 
@@ -3456,8 +3456,6 @@ COPY cadre.ad_scripting (ad_client_id, ad_org_id, ad_scripting_id, createdby, de
 
 COPY cadre.ad_serviceprovider (ad_serviceprovider_id, ad_client_id, ad_org_id, isactive, created, createdby, updated, updatedby, value, attributes, ad_serviceprovider_uu, ad_extension_id, classname, servicetype) FROM stdin;
 1	0	0	Y	2020-04-10 13:15:11.096857	0	2020-04-10 13:15:11.096857	0	default	\N	17848b2d-07fd-43a4-9f76-86a8c73c871e	0	com.cadre.server.core.security.impl.UsernamePasswordLoginRealm	1
-6	0	0	Y	2020-04-10 13:09:00.755498	0	2020-04-10 13:09:00.755498	0	facebook	appSecret:45a5d95264235b2fd3215f63d743138a	\N	0	com.cadre.server.ext.facebook.FacebookProvider	1
-7	0	0	Y	2020-04-11 22:02:13.44061	0	2020-04-11 22:02:13.44061	0	google	clientId:140618949962-bhq02geskeo3rfg6fum0aemjpk6j46ab.apps.googleusercontent.com	\N	0	com.cadre.server.ext.google.GoogleProvider	1
 8	0	0	Y	2020-04-15 23:52:33.010761	0	2020-04-15 23:52:33.010761	0	aws-s3	\N	\N	0	com.cadre.server.ext.amazon.s3.AWSS3StoreImpl	3
 9	0	0	Y	2020-04-15 23:53:22.655589	0	2020-04-15 23:53:22.655589	0	empty	\N	\N	0	com.cadre.server.core.attachment.EmptyStoreImpl	3
 10	0	0	Y	2020-04-16 11:06:09.82964	0	2020-04-16 11:06:09.82964	0	email	\N	\N	0	com.cadre.server.core.notification.SendEmailSMTP	2
@@ -3595,7 +3593,7 @@ COPY cadre.ad_table_trl (ad_table_id, ad_language, name) FROM stdin;
 
 COPY cadre.ad_toolbarbutton (ad_toolbarbutton_id, ad_client_id, ad_org_id, isactive, created, createdby, updated, updatedby, name, icon, description, help, ad_process_id, actionname, ad_tab_id, islinkedtoselectedrecord, ad_toolbarbutton_uu) FROM stdin;
 2	0	0	Y	2021-05-06 21:20:39.06128	0	2021-05-08 23:01:24.082	0	Create Table from Database	fa fa-cog	Create Table from Database	\N	1	Sync Database	2	Y	8b2174af-8315-4ecf-bb17-6ad6335de226
-    \.
+\.
 
 
 --
