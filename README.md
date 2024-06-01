@@ -62,6 +62,16 @@ To run the application, use the Angular CLI command:
 ng serve
 ```
 
+```env
+User: admin@cadre.com
+Password: System
+```
+
+<img width="1434" alt="Captura de Tela 2024-06-01 às 10 18 20" src="https://github.com/fmoraes87/cadre/assets/11674222/8edc248d-c0c1-4a5d-b4a7-a4c1a372bee9">
+
+<img width="1434" alt="Captura de Tela 2024-06-01 às 10 18 08" src="https://github.com/fmoraes87/cadre/assets/11674222/f256a507-6037-4ed3-9d1e-3083ab45495e">
+
+
 By default, the application will be served at `http://localhost:4200/`.
 
 ### Building the Application
