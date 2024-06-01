@@ -111,6 +111,12 @@ docker-compose -f docker-compose-dev.yml up -d
 3. Deploy the WAR file to Tomcat:
    - Copy the WAR file to the Tomcat `webapps` directory.
    - Start Tomcat (if not already running).
+  
+4. Set the database connection environment variable
+  
+```env
+  DATABASE_URL = postgres://cadre:c4dr3@localhost:5432/cadre
+```
 
 ### Accessing the Application
 Once deployed, the backend application will be accessible at `http://localhost:8080/<your-app-context>`.
