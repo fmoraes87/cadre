@@ -212,7 +212,7 @@ public class OAuth2ServiceImpl implements OAuthService{
 			
 			SearchQuery queryUser = new JDBCQueryImpl.Builder(MUser.TABLE_NAME)
 					.and(GenericCondition.equals(MUser.COLUMNNAME_EMailUser, oauthRequest.getUsername().trim()))
-				//	.and(GenericCondition.equals(MUser.COLUMNNAME_UserPIN,PasswordUtils.getHash(oauthRequest.getPassword())))
+					.and(GenericCondition.equals(MUser.COLUMNNAME_UserPIN,PasswordUtils.getHash(oauthRequest.getPassword())))
 					.build();
 
 			SearchResult<MUser> userResult = genericService.search(trxName, queryUser);
