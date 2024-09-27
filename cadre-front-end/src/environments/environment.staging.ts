@@ -6,12 +6,12 @@
 export const environment = {
   production: false,
 
-  clientId: 'cadre.api.oauth2-client.ng-cadre-webapp.4feb6a7db5c6621b0b07adc8eb8b64e9',
-  clientSecret: 'b9d9f7ab5c06430c176365ba27327bbc',
-  server: 'https://bgringo-backoffice.herokuapp.com' ,
-  endpoint_odata: 'https://bgringo-backoffice.herokuapp.com/ODataServlet.svc/',
-  endpoint_token: 'https://bgringo-backoffice.herokuapp.com/api/v1/token',
-  endpoint_user: 'https://bgringo-backoffice.herokuapp.com/api/v1/user',
+  clientId: '<<your client id>>',
+  clientSecret: '<<your secret>>',
+  server: '<<server>' ,
+  endpoint_odata: '<<server>>/ODataServlet.svc/',
+  endpoint_token: '<<server>>/api/v1/token',
+  endpoint_user: '<<server>>/api/v1/user',
 
 
 };
